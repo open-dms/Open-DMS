@@ -1,4 +1,4 @@
-export default function Page({ params, searchParams }) {
+export default function HomePage({ params, searchParams }) {
   return (
     <>
       <h1>HOME</h1>

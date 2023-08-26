@@ -1,4 +1,4 @@
-export default function Page({ params, searchParams }) {
+export default function EntityPage({ params, searchParams }) {
   return (
     <>
       <h1>HOME/ENTITY</h1>
