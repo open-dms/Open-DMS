@@ -5,6 +5,12 @@ node_modules
 .pnp
 .pnp.js
 
+
+# Omit git on few packages until they are more suitable to ship
+apps/odms-admin
+packages/odms-sdk
+packages/odms-ui
+
 # testing
 coverage
 
