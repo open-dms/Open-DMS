@@ -32,7 +32,13 @@ EMAIL_FROM=
 
 ```
 
+> ☝️ NOTE: App is configured to use mongodb in `~/prisma/schema.prisma` for now. 
 
+#### Sign In to the app
+
+Use the `next-auth`'s default signIn at [http://localhost:3000/api/auth/signin?provider=email](http://localhost:3000/api/auth/signin?provider=email) 
+
+> ☝️ NOTE: for now the magic-link that will allow account signIn is only availbale in the apps console. 
 
 #### Useful links
 
