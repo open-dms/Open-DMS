@@ -8,7 +8,7 @@ import { prisma } from "../../../lib/server/db";
 
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
-  debug: true,
+  debug: process.env.NODE_ENV !== "production" ? true : false,
   providers: [
     EmailProvider({
       generateVerificationToken: async () => {
