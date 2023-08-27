@@ -15,13 +15,7 @@
     "module": "CommonJS",
     "noEmit": true,
     "resolveJsonModule": true,
-    "strict": false,
-    "paths": {
-      "@/components/*": ["src/components/*"],
-      "@/public/*": ["public/*"],
-      "@/lib/*": ["src/lib/*"],
-      "@/hooks/*": ["src/hooks/*"]
-    }
+    "strict": false
   },
   "include": ["src", "next-env.d.ts"],
   "exclude": ["node_modules"]
