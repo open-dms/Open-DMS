@@ -1,13 +1,27 @@
-/** @todo we're importing a shared globals.css from the dedicated `odms-ui` package (includes @taiwind imports)  */
+import "./globals.css";
+
+import { dir } from "i18next";
 
 // import "odms-ui/app/globals.css";
 
 /** @note do the @tailwind imports locally for now  */
-import "./globals.css";
+/** @todo we're importing a shared globals.css from the dedicated `odms-ui` package (includes @taiwind imports)  */
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const languages = ["en", "de"];
+
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
+
+export default function RootLayout({
+  children,
+  params: { lng },
+}: {
+  children: React.ReactNode;
+  params: { lng: string | "en" };
+}) {
   return (
-    <html lang="en">
+    <html lang={lng} dir={dir(lng)}>
       <body className="w-screen h-screen flex items-center justify-center">{children}</body>
     </html>
   );
