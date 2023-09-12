@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "next dev --port 3000",
+    "dev": "export NODE_NO_WARNINGS && next dev --port 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
