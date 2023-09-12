@@ -9,11 +9,11 @@ Open DMS ist ein quelloffenes und frei verfügbares Destination Management Syste
 Bei der Verwaltung einer touristischen Destination fallen eine Vielzahl von Daten an, die zur Analyse, Planung, Entwicklung und Förderung der Destination genutzt werden können. Die Sammlung und Nutzung dieser Daten wird mittels spezialisierter Destination Management Systeme (DMS) ermöglicht.
 Sehenswürdigkeiten, Wanderrouten und Veranstaltungen stellen als Teil der touristischen Infrastruktur Schlüsselelemente dar, da sie wesentliche Elemente für das Erlebnis und die Attraktivität einer Region darstellen, die Touristen anziehen und ihre Erfahrungen beeinflussen.
 
-Um eine Destination in digitalen Kanälen erreichbar zu machen und vermarkten zu können, müssen  diese Daten an zentraler Stelle gesammelt und erhoben werden. Hierbei spielt es keine Rolle, wer die Daten erhebt und wo genau die Daten aufgehoben werden. Wichtig ist vor allem die Qualität der Daten, deren Richtigkeit und Aktualität und dass die Daten für alle interessierten Akteure frei zugänglich sind.
+Um eine Destination in digitalen Kanälen erreichbar zu machen und vermarkten zu können, müssen diese Daten an zentraler Stelle gesammelt und erhoben werden. Hierbei spielt es keine Rolle, wer die Daten erhebt und wo genau die Daten aufgehoben werden. Wichtig ist vor allem die Qualität der Daten, deren Richtigkeit und Aktualität und dass die Daten für alle interessierten Akteure frei zugänglich sind.
 
 ## …werden zu offenen Daten
 
-Ein wesentlicher Akteur bei der Erhebung und Sicherstellung der Qualität der Daten sind die Destination Management Organisationen (DMO). Sie befinden sich in Deutschland sehr oft vollständig oder teilweise in öffentlicher Trägerschaft und verwenden öffentliche Gelder, um ihrer Tätigkeit nachzugehen. 
+Ein wesentlicher Akteur bei der Erhebung und Sicherstellung der Qualität der Daten sind die Destination Management Organisationen (DMO). Sie befinden sich in Deutschland sehr oft vollständig oder teilweise in öffentlicher Trägerschaft und verwenden öffentliche Gelder, um ihrer Tätigkeit nachzugehen.
 Wie auch die EU hat die Bundesregierung in verschiedenen Gesetzen, Initiativen und Projekten die Verwendung von durch öffentliche Träger erhobenen Daten in offen zugänglichen Plattformen gefördert und gestärkt. Durch die Bereitstellung dieser Daten können Innovationen gefördert, Forschungen unterstützt und eine stärkere Beteiligung und Transparenz in der Regierungsführung erreicht werden.
 
 ## Hello, Open Data Germany!
@@ -24,9 +24,9 @@ Für den Tourismusbereich steht das Projekt “Open Data Germany“, eine Initia
 
 Open DMS setzt bei der Pflege der touristischen Kerndaten an. Diese sind:
 
-* Points of Interest (POI), 
-* Touren 
-* Events
+- Points of Interest (POI),
+- Touren
+- Events
 
 Open DMS kann auf dem eigenen Server installiert oder in einer Service-Cloud bereitgestellt werden.
 
