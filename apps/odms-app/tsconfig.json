@@ -6,15 +6,15 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "~*": ["../../packages/odms-ui/src/components/*"]
+      // "@ui/*": ["odms-ui/src/*"]
+    },
+
     "strictNullChecks": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
