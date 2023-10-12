@@ -1,1 +1,12 @@
-{ "hello-world": "Hello World", "welcome-user": "Welcome {{user}}" }
+{ 
+    "launchAppButtonLabel": "Open-DMS Starten",
+    "brandTitle": "Open-DMS",
+    "brandDescription": "Open-DMS",
+    "brandHeadline": "Open Source\nTourism Destination Management System",
+    "brandCaption": "A open source application to maintain tourism information and event data in compliance with the",
+    "brandCaptionLinkLabel": "german tourism open-data initiative",
+    "frontFooterButtonLabelGithub":"Github",
+    "frontFooterButtonTitleGithub":"Open-DMS is available on Github",
+    "frontFooterButtonLabelDiscord":"Discord",
+    "frontFooterButtonTitleDiscord":"Join our dedicated Open-DMS community on Discord."
+}

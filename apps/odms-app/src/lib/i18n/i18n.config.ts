@@ -6,7 +6,7 @@ export const defaultNS = "common";
 
 export function i18nConfig(lng = fallbackLng, ns = defaultNS) {
   return {
-    debug: process.env.NODE_ENV !== "production" ? true : false,
+    debug: process.env.NODE_ENV !== "production" ? false : false,
     supportedLngs: languages,
     fallbackLng,
     lng,

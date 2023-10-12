@@ -1,5 +1,5 @@
 # OMDS i18n 🇺🇸
 
-Home for english translation files 
+Home for english translation files
 
-Extend  `./common.json` to get started.
+Extend `./common.json` to get started.
