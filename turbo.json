@@ -5,7 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "env": ["NODE_NO_WARNINGS", "NODE_ENV", "NEXTAUTH_SECRET", "NEXTAUTH_URL", "NEXT_PUBLIC_URL"]
+      "env": ["NEXT_PUBLIC_DISCORD_INVITE","NEXT_PUBLIC_GITHUB_INVITE","NODE_NO_WARNINGS", "NODE_ENV", "NEXTAUTH_SECRET", "NEXTAUTH_URL", "NEXT_PUBLIC_URL"]
     },
     "lint": {},
     "dev": {
