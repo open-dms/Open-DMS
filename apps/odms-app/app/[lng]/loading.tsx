@@ -1,3 +1,9 @@
-export default function Loading() {
-  return <div className="w-auto h-auto flex items-center justify-center">...</div>;
+import Loading from "@/src/components/layout/Loading";
+
+export default function DefaultLoading() {
+  return (
+    <div className="w-full h-full flex items-center justify-center">
+      <Loading message="..." />
+    </div>
+  );
 }

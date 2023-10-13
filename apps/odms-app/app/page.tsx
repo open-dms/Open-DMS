@@ -1,7 +1,6 @@
+import { redirect } from "next/navigation";
+
 export default function Page() {
-  return (
-    <>
-      <h1>Open-DMS</h1>
-    </>
-  );
+  /** @note hard-coded forward to german translation / ui by default */
+  redirect("/de");
 }

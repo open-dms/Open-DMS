@@ -8,9 +8,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "~*": ["../../packages/odms-ui/src/components/*"]
-      // "@ui/*": ["odms-ui/src/*"]
+      "@/*": ["./*"],
+      "@ui/*": ["../../packages/odms-ui/*"],
+      "@ui/components/*": ["../../packages/odms-ui/components/*"]
     },
 
     "strictNullChecks": true
