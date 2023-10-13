@@ -14,7 +14,11 @@ export interface PaginationArgs {
 /** with configurable cache expiry & ability to force-revalidate */
 /** see: https://nextjs.org/docs/app/api-reference/functions/revalidateTag) */
 
-export const paginatedFetch = async (path: string, entity: string, params: PaginationArgs) => {
+export const paginatedFetch = async (
+  path: string,
+  entity: string,
+  params: PaginationArgs
+) => {
   /** @todo add better validation for passed props */
 
   const searchParams = new URLSearchParams(params as Record<string, string>);
