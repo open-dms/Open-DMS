@@ -1,0 +1,14 @@
+import { NextRequest, NextResponse } from "next/server";
+import { buildJsonResponse, parseSearchParams } from "@/lib/server/helper";
+
+import { randomUUID } from "crypto";
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: unknown }
+) {
+  return NextResponse.json({
+    res: [params],
+    obj: { evt: { at: new Date(), id: randomUUID() } },
+  });
+}

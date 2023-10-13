@@ -1,0 +1,15 @@
+
+import { NextRequest, NextResponse } from "next/server";
+
+import { randomUUID } from "crypto";
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { {{#each segments}}{{this}}: string; {{/each}} } }
+) {
+  const query = request.query
+  return NextResponse.json({
+    res: [{params, query}],
+    obj: { evt: { at: new Date(), id: randomUUID() } },
+  });
+}

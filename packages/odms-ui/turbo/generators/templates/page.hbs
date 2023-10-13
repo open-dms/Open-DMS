@@ -1,0 +1,28 @@
+interface {{ pascalCase name }}PageProps {
+  params?: any | undefined;
+  searchParams?: any | undefined;
+}
+
+async function getPageData() {
+  const res = await fetch('/api/some/thing')
+  /** @note The return value is *not* serialized, you can return Date, Map, Set, etc. */
+ 
+  if (!res.ok) {
+    /** @note This will activate the closest `error.js` Error Boundary */
+    throw new Error('ODMS_ERROR_DATA_FETCH_FAILED')
+  }
+
+  return res.json()
+}
+
+const {{ pascalCase name }}Page = asnyc ({ params, searchParams }: {{ pascalCase name }}PageProps):JSX.Element => {
+  const data = await getPageData()
+  return (
+    <div>
+      <h1>{{ name }}Page</h1>
+      <pre>{JSON.stringify({params, searchParams})}</pre>
+    </div>
+  );
+};
+
+export default {{ pascalCase name }}Page

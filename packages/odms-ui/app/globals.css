@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  white-space: pre-line;
+}
+
+@layer base {
+  #portal-container {
+    @apply z-[100] fixed bottom-0 left-0 right-0 w-screen flex flex-col items-start justify-end pointer-events-none;
+  }
+
+  #portal-container.expanded {
+    @apply bg-black/80 h-screen pointer-events-none;
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: ;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+    --background-site: #888;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: ;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 217.2 32.6% 17.5%;
+    --background-site: #eee;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  div[role="region"] ol[tabindex="-1"] {
+    @apply gap-1;
+  }
+  html,
+  body {
+    @apply m-0 p-0 text-foreground;
+  }
+}
+
+.jump {
+  animation: jump 0.75s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  transform-style: preserve-3d;
+  user-select: none;
+}
+
+@keyframes jump {
+  0%,
+  90%,
+  100% {
+    transform: translateY(0vh);
+  }
+  40% {
+    transform: translateY(-5vh);
+  }
+}
