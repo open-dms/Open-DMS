@@ -1,7 +1,7 @@
 export default function NodePage(props: { params: any; searchParams: any }) {
   return (
     <>
-      <h1>HOME/ENTITY/NODE</h1>
+      <h1>HOME/MODEL/NODE</h1>
       <pre>{JSON.stringify(props)}</pre>
     </>
   );
