@@ -46,6 +46,19 @@ model Session {
   @@map("sessions")
 }
 
+model Invite {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  uuid        String    @unique @default(uuid())
+  name        String
+  email       String?   @unique
+  from        String    @default("no-reply@open-dms.org")
+  dateCreated DateTime  @default(now())
+  emailSent   DateTime?
+  teamIDs     String[]
+
+  @@map("invites")
+}
+
 model User {
   id            String    @id @default(auto()) @map("_id") @db.ObjectId
   uuid          String    @unique @default(uuid())
@@ -58,9 +71,13 @@ model User {
   teamAdded     DateTime?
   teamVerified  DateTime?
   teamChanged   DateTime?
+  latestTeam    String?
+  latestProject String?
   image         String?
   accounts      Account[]
   sessions      Session[]
+  teamIDs       String[]  @db.ObjectId
+  teams         Team[]    @relation(fields: [teamIDs], references: [id])
 
   @@map("clients")
 }
@@ -78,8 +95,41 @@ model VerificationToken {
   @@map("tokens")
 }
 
-/// end: next-auth
+/// generalized Display type for each of the folloging Entity Models (Team, Project, Node)
 
+type Display {
+  hook String?
+  name String?
+  head String?
+  lead String?
+  body String?
+  link String?
+}
+
+// type Log {
+//   date DateTime  @default(now())
+//   uuid String    @unique @default(uuid())
+//   hook String?
+//   name String?
+//   refs String[]
+// }
+
+/// Any data node inherited from our API end (POI, Event, Source & Schema XYZ)
+model Node {
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  uuid        String      @unique @default(uuid())
+  dateCreated DateTime    @default(now())
+  lastFetched DateTime?
+  lastUpdate  DateTime?   @updatedAt
+  variant     NodeVariant @default(DEFAULT)
+  display     Display
+  source      String
+  origin      String      @unique
+
+  @@map("nodes")
+}
+
+/// Mapping of a 'omds:schema' (tbd)
 enum NodeVariant {
   PLACE
   VENDOR
@@ -89,37 +139,41 @@ enum NodeVariant {
   DEFAULT
 }
 
-model Node {
-  id          String      @id @default(auto()) @map("_id") @db.ObjectId
-  uuid        String      @unique @default(uuid())
-  dateCreated DateTime    @default(now())
+/// Users become owner of their own dedicated team, so that they can invite collaborators
+model Team {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  uuid        String    @unique @default(uuid())
+  display     Display
+  dateCreated DateTime  @default(now())
   lastFetched DateTime?
-  lastUpdate  DateTime?   @updatedAt
-  variant     NodeVariant @default(DEFAULT)
-  title       String?
-  source      String
-  origin      String      @unique
+  lastUpdate  DateTime? @updatedAt
+  memberIDs   String[]  @db.ObjectId
+  members     User[]    @relation(fields: [memberIDs], references: [id])
 
-  @@map("nodes")
+  @@map("teams")
 }
 
-enum ProjectState {
-  EMPTY
-  SETUP
-  DRAFT
-  READY
-  PUBLIC
-}
-
+/// Users collaborate on Projects 
 model Project {
   id          String       @id @default(auto()) @map("_id") @db.ObjectId
   uuid        String       @unique @default(uuid())
   dateCreated DateTime     @default(now())
   lastFetched DateTime?
   lastUpdate  DateTime?    @updatedAt
-  state       ProjectState @default(EMPTY)
-  title       String?
+  state       ProjectState @default(IDLE)
+  display     Display
   source      String
+  schema      String
 
   @@map("projects")
+}
+
+/// Projects have states
+
+enum ProjectState {
+  IDLE /// created no data / bounds or location / meta info set
+  OPEN /// created and bounds / map / zoom / meta info set but no data points
+  DRAFT /// work in progress / project has entity layers, locations, e.g. events linked to locations
+  DONE /// a project is ready for a final review
+  LIVE /// a project is published and available under a dedicated url
 }
