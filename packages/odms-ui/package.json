@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
     "turbo": "turbo gen",
-    "shadcn": "npx shadcn-ui@latest add --overwrite"
+    "shadcn": "npx shadcn-ui@latest add"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
