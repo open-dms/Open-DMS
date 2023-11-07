@@ -22,12 +22,10 @@ NEXTAUTH_SECRET=
 NEXTAUTH_URL=http://localhost:3000
 NEXT_PUBLIC_URL=http://localhost:3000
 
-# authentication emails
-SMTP_USER=
-SMTP_PASSWORD=
-SMTP_HOST=
-SMTP_PORT=
-EMAIL_FROM=
+# authentication emails (we use former sendinblue now brevo (https://www.brevo.com/), bc they are 100% compliant w/ german & EU DSGVO laws)
+
+BREVO_APIKEY=
+BREVO_EMAIL_FROM=
 
 ```
 
