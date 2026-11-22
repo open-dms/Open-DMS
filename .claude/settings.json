@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "netronaut-skills": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/Netronaut/netronaut-skills.git"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "netronaut-skills@netronaut-skills": true
+  }
+}
